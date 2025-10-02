@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Sauce Demo Test Suite" verbose="1">
+    <test name="All Tests" parallel="false">
+        <classes>
+            <class name="com.sauce.runner.TestRunner"/>
+        </classes>
+    </test>
+</suite>
