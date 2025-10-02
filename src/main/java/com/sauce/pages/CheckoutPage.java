@@ -2,7 +2,7 @@ package com.sauce.pages;
 
 import com.sauce.context.TestContext;
 import com.sauce.utils.SlowMotion;
-import com.sauce.utils.UIEffects;
+import com.sauce.utils.UiEffects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,7 +34,7 @@ public class CheckoutPage extends BasePage {
 
     public String successText() {
         WebElement element = findElement(successMsg);
-        UIEffects.highlight(driver, element);
+        UiEffects.highlight(driver, element);
         SlowMotion.intentionalWait();
         TestContext.takeScreenshotCallback(driver);
         return element.getText();

@@ -2,7 +2,7 @@ package com.sauce.pages;
 
 import com.sauce.context.TestContext;
 import com.sauce.utils.SlowMotion;
-import com.sauce.utils.UIEffects;
+import com.sauce.utils.UiEffects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
@@ -26,7 +26,7 @@ public abstract class BasePage {
 
     protected void click(By locator) {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
-        UIEffects.highlight(driver, element);
+        UiEffects.highlight(driver, element);
         SlowMotion.intentionalWait();
         TestContext.takeScreenshotCallback(driver);
         element.click();
@@ -34,7 +34,7 @@ public abstract class BasePage {
 
     protected void type(By locator, String text) {
         WebElement element = findElement(locator);
-        UIEffects.highlight(driver, element);
+        UiEffects.highlight(driver, element);
         SlowMotion.intentionalWait();
         TestContext.takeScreenshotCallback(driver);
         element.clear();
