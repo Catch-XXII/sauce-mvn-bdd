@@ -1,6 +1,21 @@
 # Maven BDD Project
 
-Web UI and API Test Automation project using Rest Assured, TestNG, and Allure Reports.
+This project is a test automation framework for the Sauce Demo e-commerce site and its backend API. 
+Project aims to demonstrate end-to-end testing capabilities across Web UI and API layers, as well as outline strategies for mobile automation and CI/CD integration
+
+
+For demonstration purposes, two helper classes are included under the `utils` package:
+
+- **SlowMotion** — slows test execution to improve step-by-step visibility.
+- **UiEffects** — visually highlights the element currently being interacted with.
+
+> These are for demos only; I don’t recommend using them in real projects or CI.
+
+To adjust the speed, set **slow.mo** in **application.properties** (e.g., 250 or 500 ms):
+
+```properties
+slow.mo=250
+```
 
 ## Prerequisites
 
