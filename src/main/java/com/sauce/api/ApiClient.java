@@ -5,6 +5,9 @@ import com.sauce.config.Config;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.lessThan;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+
 
 public class ApiClient {
     public Product getProductById(int id) {
@@ -19,6 +22,8 @@ public class ApiClient {
                 .then()
                 .statusCode(200)
                 .body("id", equalTo(id))
+                .body(matchesJsonSchemaInClasspath("schemas/product-schema.json"))
+                .time(lessThan(2000L))
                 .extract()
                 .as(Product.class);
     }

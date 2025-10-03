@@ -70,9 +70,10 @@ public class EndToEndSteps {
         double apiPrice = api.price;
 
         Assert.assertNotEquals(uiName, apiName,
-                String.format("Product names are different as expected - UI: '%s', API: '%s'", uiName, apiName));
+                String.format("Expected UI and API product names to differ, but both were '%s'", uiName));
+
         Assert.assertNotEquals(uiPrice, apiPrice, 0.001,
-                String.format("Product prices are different as expected - UI: $%.2f, API: $%.2f", uiPrice, apiPrice));
+                String.format("Expected UI and API product prices to differ, but both were $%.2f", uiPrice));
     }
 
     @When("I complete checkout with {string}, {string} and {string} info")
